@@ -1,0 +1,1045 @@
+/* =========================================
+   ОСНОВНЫЕ НАСТРОЙКИ
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #0a0d0c;
+    color: #ffffff;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   ОБЩИЕ КЛАССЫ
+   ========================================= */
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(10, 13, 12, 0.94);
+
+    border-bottom: 1px solid #1d2722;
+
+    backdrop-filter: blur(12px);
+}
+
+.nav {
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #3cff7a;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+
+    gap: 26px;
+}
+
+.menu a {
+    color: #aab3ae;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: #3cff7a;
+}
+
+.menu a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(60, 255, 122, 0.12),
+            transparent 35%
+        );
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.hero-text {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.badge {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: #3cff7a;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: #3cff7a;
+}
+
+.hero-description {
+    max-width: 550px;
+
+    color: #aab3ae;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+.hero-image {
+    animation: fadeIn 1s ease forwards;
+}
+
+.hero-image img {
+    width: 100%;
+
+    border-radius: 24px;
+
+    border: 1px solid #26342b;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 0 25px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    border: 1px solid transparent;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(60, 255, 122, 0.18);
+}
+
+.btn-primary {
+    background: #3cff7a;
+    color: #071009;
+}
+
+.btn-primary:hover {
+    background: #65ff94;
+}
+
+.btn-secondary {
+    background: transparent;
+
+    border-color: #35443a;
+
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    border-color: #3cff7a;
+    color: #3cff7a;
+}
+
+
+/* =========================================
+   ЗАГОЛОВКИ СЕКЦИЙ
+   ========================================= */
+
+.section-title {
+    margin-bottom: 45px;
+}
+
+.section-title h2,
+.image-section h2 {
+    font-size: clamp(32px, 5vw, 52px);
+
+    line-height: 1.1;
+
+    letter-spacing: -2px;
+}
+
+
+/* =========================================
+   КАРТОЧКИ СПОРТА
+   ========================================= */
+
+.sport-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.sport-card {
+    padding: 30px;
+
+    min-height: 190px;
+
+    background: #101512;
+
+    border: 1px solid #1e2b23;
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.sport-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #3cff7a;
+
+    background: #121b16;
+}
+
+.sport-card span {
+    font-size: 34px;
+
+    display: block;
+
+    margin-bottom: 20px;
+}
+
+.sport-card h3 {
+    margin-bottom: 8px;
+}
+
+.sport-card p {
+    color: #8f9b94;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   IMAGE SECTION
+   ========================================= */
+
+.image-section {
+    padding: 100px 0;
+
+    background: #0d120f;
+}
+
+.image-section-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.image-section img {
+    width: 100%;
+
+    border-radius: 22px;
+
+    border: 1px solid #253229;
+}
+
+.image-section p:not(.badge) {
+    color: #aab3ae;
+
+    margin: 25px 0 30px;
+
+    max-width: 520px;
+}
+
+
+/* =========================================
+   PAGE HEADER
+   ========================================= */
+
+.page-header {
+    padding: 100px 0 70px;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(60, 255, 122, 0.08),
+            transparent 35%
+        );
+}
+
+.page-header h1 {
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 20px;
+}
+
+.page-header p:not(.badge) {
+    color: #929d96;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   РАСПИСАНИЕ
+   ========================================= */
+
+.schedule {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+.day {
+    background: #101512;
+
+    border: 1px solid #202c25;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+}
+
+.day-header {
+    padding: 22px 26px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid #202c25;
+}
+
+.day-header span {
+    color: #76827b;
+
+    font-size: 13px;
+}
+
+.training {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 23px 26px;
+
+    border-bottom: 1px solid #1a241e;
+
+    transition: background 0.3s ease;
+}
+
+.training:last-child {
+    border-bottom: none;
+}
+
+.training:hover {
+    background: #141b17;
+}
+
+.training h3 {
+    margin: 5px 0;
+}
+
+.training p {
+    color: #7f8b84;
+
+    font-size: 13px;
+}
+
+.time {
+    color: #3cff7a;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+.tag {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #18241c;
+
+    color: #3cff7a;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   БОЛЬШАЯ СЕТКА СПОРТОВ
+   ========================================= */
+
+.sport-large-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.sport-item {
+    overflow: hidden;
+
+    background: #101512;
+
+    border: 1px solid #202c25;
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.sport-item:hover {
+    transform: translateY(-8px);
+
+    border-color: #3cff7a;
+}
+
+.sport-item img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.sport-item:hover img {
+    transform: scale(1.05);
+}
+
+.sport-item-content {
+    padding: 25px;
+}
+
+.sport-category {
+    color: #3cff7a;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.sport-item h2 {
+    margin: 8px 0;
+}
+
+.sport-item p {
+    color: #8e9992;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.small-link {
+    color: #3cff7a;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: padding-left 0.3s ease;
+}
+
+.small-link:hover {
+    padding-left: 6px;
+}
+
+
+/* =========================================
+   ТРЕНЕРЫ
+   ========================================= */
+
+.trainer-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.trainer-card {
+    background: #101512;
+
+    border: 1px solid #202c25;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.trainer-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #3cff7a;
+}
+
+.trainer-card img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+.trainer-info {
+    padding: 20px;
+}
+
+.trainer-info h2 {
+    font-size: 18px;
+
+    margin-bottom: 6px;
+}
+
+.trainer-info p {
+    color: #89958e;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+.trainer-info span {
+    color: #3cff7a;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   СТАТИСТИКА
+   ========================================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.stat {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #101512;
+
+    border: 1px solid #202c25;
+
+    border-radius: 16px;
+}
+
+.stat strong {
+    display: block;
+
+    color: #3cff7a;
+
+    font-size: 40px;
+
+    margin-bottom: 5px;
+}
+
+.stat span {
+    color: #89958e;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   КОНТАКТЫ
+   ========================================= */
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #202c25;
+}
+
+.contact-item > span {
+    font-size: 25px;
+}
+
+.contact-item h3 {
+    font-size: 16px;
+}
+
+.contact-item p {
+    color: #89958e;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   ФОРМА
+   ========================================= */
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 30px;
+
+    background: #101512;
+
+    border: 1px solid #202c25;
+
+    border-radius: 18px;
+}
+
+.contact-form label {
+    color: #aeb8b2;
+
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background: #0a0d0c;
+
+    color: #ffffff;
+
+    border: 1px solid #29372e;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #3cff7a;
+}
+
+.contact-form textarea {
+    resize: vertical;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer {
+    padding: 35px 0;
+
+    background: #080b09;
+
+    border-top: 1px solid #1b261f;
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer p {
+    color: #69756e;
+
+    font-size: 13px;
+}
+
+.footer a:not(.logo) {
+    color: #3cff7a;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   АНИМАЦИИ
+   ========================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* Все основные блоки мягко появляются
+   при открытии страницы */
+
+main {
+    animation: fadeIn 0.6s ease;
+}
+
+
+/* =========================================
+   АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+    .menu {
+        gap: 14px;
+    }
+
+    .menu a {
+        font-size: 12px;
+    }
+
+    .sport-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .sport-large-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .trainer-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        position: relative;
+    }
+
+    .nav {
+        padding: 18px 0;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .menu {
+        width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 12px 18px;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .image-section {
+        padding: 65px 0;
+    }
+
+    .image-section-content {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .sport-grid,
+    .sport-large-grid,
+    .trainer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .day-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .training {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .footer-content {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
+
+
+/* =========================================
+   МАЛЕНЬКИЕ ТЕЛЕФОНЫ
+   ========================================= */
+
+@media (max-width: 450px) {
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header {
+        padding: 70px 0 50px;
+    }
+
+}
